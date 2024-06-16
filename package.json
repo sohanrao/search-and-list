@@ -1,0 +1,19 @@
+{
+  "name": "search-and-list",
+  "version": "1.0.0",
+  "description": "React Vite Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sohanrao/search-and-list.git"
+  },
+  "author": "Sohan Rao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sohanrao/search-and-list/issues"
+  },
+  "homepage": "https://github.com/sohanrao/search-and-list#readme"
+}
