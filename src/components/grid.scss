@@ -1,0 +1,11 @@
+.app__results-grid {
+  font-size: 0.8rem;
+  padding: 0 2rem;
+
+  .app__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 120px);
+    row-gap: 15px;
+    justify-content: space-evenly;
+  }
+}

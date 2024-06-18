@@ -1,0 +1,102 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Landing Page > renders the Landing Page component 1`] = `
+<div>
+  <div
+    class="app__header"
+  >
+    <div>
+      <a
+        class="app__header--logo"
+        href="/"
+      >
+        All You Can Read
+      </a>
+    </div>
+    <div
+      class="app__search"
+    >
+      <input
+        name="search"
+        placeholder="Search by title"
+        type="search"
+      />
+      <a
+        class="app__search--button"
+        href="/search?q="
+      >
+        Search
+      </a>
+    </div>
+    <div
+      class="app__search--tags"
+    >
+      <span>
+        Popular categories:
+      </span>
+      <a
+        class=""
+        href="/genre/fiction"
+      >
+        fiction
+      </a>
+      <a
+        class=""
+        href="/genre/non-fiction"
+      >
+        non-fiction
+      </a>
+      <a
+        class=""
+        href="/genre/self-help"
+      >
+        self-help
+      </a>
+      <a
+        class=""
+        href="/genre/biography"
+      >
+        biography
+      </a>
+      <a
+        class=""
+        href="/genre/education"
+      >
+        education
+      </a>
+      <a
+        class=""
+        href="/genre/food"
+      >
+        food
+      </a>
+      <a
+        class=""
+        href="/genre/music"
+      >
+        music
+      </a>
+      <a
+        class=""
+        href="/genre/movies"
+      >
+        movies
+      </a>
+      <a
+        class=""
+        href="/genre/crime"
+      >
+        crime
+      </a>
+    </div>
+  </div>
+  <div
+    class=""
+    id="detail"
+  >
+    <div>
+      Index route
+    </div>
+  </div>
+</div>
+`;

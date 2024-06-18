@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Error Page > renders the Error Page component 1`] = `
+<div>
+  <div
+    id="error-page"
+  >
+    <h1>
+      Oops!
+    </h1>
+    <p>
+      Sorry, an unexpected error has occurred.
+    </p>
+    <p>
+      <i>
+        Not Found
+      </i>
+    </p>
+    <a
+      href="/"
+    >
+      Home
+    </a>
+  </div>
+</div>
+`;

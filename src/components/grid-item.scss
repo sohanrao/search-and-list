@@ -1,0 +1,18 @@
+.app__grid-item {
+  &--title {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &--year {
+    font-size: 0.6rem;
+  }
+
+  img {
+    width: 120px;
+    background-color: #f0edcf;
+    border: 1px solid #333;
+  }
+}

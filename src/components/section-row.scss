@@ -1,0 +1,9 @@
+.app__section-row {
+  font-size: 0.8rem;
+  display: flex;
+  gap: 20px;
+
+  > div {
+    min-width: 18%;
+  }
+}

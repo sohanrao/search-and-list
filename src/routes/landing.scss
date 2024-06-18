@@ -1,0 +1,129 @@
+.app__header {
+  width: 970px;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1px solid #333;
+  border-radius: 0 0 8px 8px;
+
+  & > div:first-child {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 30px;
+    background: #f0edcf;
+  }
+
+  &--logo {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    display: flex;
+    height: 48px;
+    top: 0;
+    width: 18rem;
+    border-radius: 0 0 8px 8px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    background: #f0edcf;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid #000;
+
+    > div {
+      width: 970px;
+      display: flex;
+      height: 54px;
+
+      > a {
+        background: #000;
+        color: #fff;
+        width: 12rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      > .app__search {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-grow: 1;
+
+        & input[type="search"] {
+          width: 24rem;
+        }
+
+        &--button {
+          border-radius: 8px;
+          padding: 0.5rem 0.75rem;
+          box-shadow:
+            0 0px 1px hsla(0, 0%, 0%, 0.2),
+            0 1px 2px hsla(0, 0%, 0%, 0.2);
+          background-color: white;
+          text-decoration: none;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+.app__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  & input[type="search"] {
+    width: 36rem;
+  }
+
+  &--button {
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    box-shadow:
+      0 0px 1px hsla(0, 0%, 0%, 0.2),
+      0 1px 2px hsla(0, 0%, 0%, 0.2);
+    background-color: white;
+    text-decoration: none;
+    color: #333;
+  }
+
+  &--tags {
+    padding: 1rem;
+
+    > span {
+      font-size: 0.8rem;
+      margin-right: 1rem;
+    }
+
+    > a {
+      padding: 0.5rem 1rem;
+      background: #f0edcf;
+      border-radius: 8px;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: #333;
+
+      &.active {
+        background: #0b60b0;
+        color: #fff;
+      }
+    }
+  }
+}
