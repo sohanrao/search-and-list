@@ -4,7 +4,9 @@ A simple search and list app powered by React, React Router V6, React Query and 
 Written in typescript.
 
 To run the app locally, clone the repo and then
-`npm run dev`
+
+1. `npm i`
+2. `npm run dev`
 
 Features:
 
