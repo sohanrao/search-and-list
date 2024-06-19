@@ -5,6 +5,8 @@ import Loader from "./loader";
 import { GridItem } from "./grid-item";
 import "./grid.scss";
 import { Author, ItemModel } from "../models";
+import Pagination from "./pagination";
+import { useEffect, useState } from "react";
 
 function mapResponseData(data: any) {
   const items = data.works ? data.works : data.docs;
@@ -27,18 +29,40 @@ function mapResponseData(data: any) {
 }
 
 export default function Grid() {
+  const [currentOffset, setCurrentOffset] = useState(0);
   const { type, value } = useParams();
   const location = useLocation();
 
-  const { isPending, data } = useApi({
-    key: `${type}-${value || location.search}`,
-    url: buildURLPath(type, value, location.search),
+  const { isPending, data, refetch } = useApi({
+    key: `${type}-${value || location.search}-offset::${currentOffset}`,
+    url: buildURLPath(type, value, location.search, currentOffset),
   });
 
   const items: ItemModel[] = data ? mapResponseData(data) : [];
 
+  const pageChangeHandler = (offset: number) => {
+    setCurrentOffset(offset);
+  };
+
+  useEffect(() => {
+    refetch();
+  }, [currentOffset]);
+
+  useEffect(() => {
+    if (currentOffset === 0) {
+      refetch();
+    } else {
+      setCurrentOffset(0);
+    }
+  }, [type, value, location.search]);
+
   return (
     <div className="app__results-grid">
+      <Pagination
+        totalCount={500}
+        onPageClick={pageChangeHandler}
+        offset={currentOffset}
+      />
       {!isPending ? (
         <div className="app__grid">
           {items &&

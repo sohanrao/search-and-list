@@ -3,6 +3,7 @@ import useApi from "../hooks/useApi";
 import Loader from "./loader";
 import SectionRow from "./section-row";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const limit = 5;
 
@@ -12,10 +13,15 @@ type SectionProps = {
 };
 
 export default function Section({ title, subject }: SectionProps) {
-  const { isPending, data } = useApi({
+  const { isPending, data, refetch } = useApi({
     key: `subject-${subject}`,
     url: `/subjects/${subject}.json?limit=${limit}`,
   });
+
+  useEffect(() => {
+    refetch();
+  }, []);
+
   return (
     <section className="app__section">
       <div className="app__section--title">

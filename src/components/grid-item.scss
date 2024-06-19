@@ -1,4 +1,8 @@
 .app__grid-item {
+  min-width: 18%;
+  text-decoration: none;
+  color: #333;
+
   &--title {
     font-weight: bold;
     overflow: hidden;
@@ -14,5 +18,10 @@
     width: 120px;
     background-color: #f0edcf;
     border: 1px solid #333;
+  }
+
+  &:hover {
+    opacity: 0.5;
+    transition: opacity 200ms;
   }
 }

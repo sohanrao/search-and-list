@@ -1,9 +1,8 @@
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Landing from "./landing";
-import Index from ".";
 
 const routes = [
   {
@@ -47,6 +46,15 @@ describe("Landing Page", () => {
       expect(screen.getByText("self-help").classList.contains("active")).toBe(
         true,
       );
+    });
+    it("should show sticky header on scroll", async () => {
+      expect(screen.queryByTestId("sticky-header")).to.not.exist;
+
+      fireEvent.scroll(window, { target: { scrollY: 200 } });
+      expect(screen.getByTestId("sticky-header")).to.exist;
+
+      fireEvent.scroll(window, { target: { scrollY: 100 } });
+      expect(screen.queryByTestId("sticky-header")).to.not.exist;
     });
   });
 });

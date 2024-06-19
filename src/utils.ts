@@ -7,6 +7,7 @@ export function buildURLPath(
   type?: string,
   value?: string,
   query?: string,
+  offset?: number,
 ): string {
   let path = "";
   let url = "";
@@ -16,11 +17,11 @@ export function buildURLPath(
   }
   switch (type) {
     case "genre":
-      return `/subjects/${value}.json?limit=50`;
+      return `/subjects/${value}.json?limit=50&offset=${offset || 0}`;
 
     case "search":
       path = "/search.json";
-      url = query ? path + query + "&limit=50" : path;
+      url = query ? path + query + `&limit=50&offset=${offset || 0}` : path;
       return url;
 
     case "authors":
@@ -29,7 +30,7 @@ export function buildURLPath(
       return url;
 
     case "author":
-      return `/authors/${value}`;
+      return `/authors/${value}.json`;
 
     default:
       return "";

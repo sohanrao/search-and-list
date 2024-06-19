@@ -13,6 +13,6 @@ describe("utils: buildURLPath fn", () => {
     expect(result).toBe("/search.json?q=fiction&limit=50");
 
     const result2 = buildURLPath("author", "Dave Barry", "");
-    expect(result2).toBe("/authors/Dave Barry");
+    expect(result2).toBe("/authors/Dave Barry.json");
   });
 });

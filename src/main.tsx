@@ -7,6 +7,7 @@ import Landing from "./routes/landing";
 import Index from "./routes/index";
 import Grid from "./components/grid";
 import "./index.scss";
+import Profile from "./components/profile";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           { index: true, element: <Index /> },
+          {
+            path: "/works/:workId",
+            element: <Profile />,
+          },
           {
             path: ":type/:value",
             element: <Grid />,
