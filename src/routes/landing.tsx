@@ -22,7 +22,7 @@ export default function Landing() {
   return (
     <>
       {sticky && (
-        <div className="app__header--sticky">
+        <div className="app__header--sticky" data-testid="sticky-header">
           <div>
             <Link to={"/"}>All You Can Read</Link>
             <SearchInput />

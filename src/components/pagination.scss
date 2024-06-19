@@ -1,0 +1,12 @@
+.app__pagination {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  button.active {
+    background-color: #0b60b0;
+    color: #fff;
+  }
+}
