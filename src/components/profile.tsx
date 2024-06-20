@@ -26,8 +26,9 @@ export default function Profile() {
   const navigate = useNavigate();
   const { workId } = useParams();
   const { isPending, data } = useApi({
-    key: workId || "",
+    key: `profile-${workId}` || "",
     url: `/works/${workId}.json`,
+    enabled: true,
   });
 
   const profile: Profile = data && data;
@@ -70,7 +71,7 @@ export default function Profile() {
                   <span>References:</span>
                   <ul>
                     {profile.links.map((link) => (
-                      <li>
+                      <li key={link.url}>
                         <a href={link.url} target="_blank">
                           {link.title}
                         </a>
@@ -83,7 +84,9 @@ export default function Profile() {
                 <div>
                   <span>Genres:</span>
                   {profile.works?.map((work) => (
-                    <Link to={`genre/${work}`}>{work}</Link>
+                    <Link to={`genre/${work}`} key={work}>
+                      {work}
+                    </Link>
                   ))}
                 </div>
               )}
