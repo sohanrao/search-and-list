@@ -5,7 +5,7 @@ Written in typescript.
 
 To run the app locally, clone the repo and then
 
-1. `npm i`
+1. `npm i` (if needed, --legacy-peer-deps)
 2. `npm run dev`
 
 Features:
