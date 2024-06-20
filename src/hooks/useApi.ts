@@ -14,6 +14,7 @@ type UseApiProps = {
   options?: {
     [key: string]: any;
   };
+  enabled?: boolean;
 };
 
 export default function useApi({
@@ -21,6 +22,7 @@ export default function useApi({
   url,
   method = "get",
   options,
+  enabled = false,
 }: UseApiProps) {
   const { isPending, error, data, refetch } = useQuery({
     queryKey: [key],
@@ -29,7 +31,7 @@ export default function useApi({
         ? axios.get(BASE_PATH + url, { headers })
         : axios.post(BASE_PATH + url, options, { headers });
     },
-    enabled: false,
+    enabled,
   });
   if (error) {
     if (error.response.status === 404)

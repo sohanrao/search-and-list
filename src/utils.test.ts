@@ -10,7 +10,7 @@ describe("utils: buildURLPath fn", () => {
 
   it("should return the correct url for given inputs", () => {
     const result = buildURLPath("search", "", "?q=fiction");
-    expect(result).toBe("/search.json?q=fiction&limit=50");
+    expect(result).toBe("/search.json?q=fiction&limit=50&offset=0");
 
     const result2 = buildURLPath("author", "Dave Barry", "");
     expect(result2).toBe("/authors/Dave Barry.json");

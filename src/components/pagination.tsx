@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./pagination.scss";
 
-type PaginationProps = {
+export type PaginationProps = {
   offset: number;
   totalCount: number;
   itemsPerPage?: number;
@@ -16,15 +16,13 @@ type PageButton = {
 function getPageNumbers(
   totalCount: number,
   itemsPerPage: number,
-): { numbers: PageButton[] } {
+): PageButton[] {
   const total = totalCount < 500 ? totalCount : 500;
   const pages = Math.ceil(total / itemsPerPage);
-  return {
-    numbers: new Array(pages).fill("").map((_, index) => ({
-      label: String(index + 1),
-      offset: index * itemsPerPage,
-    })),
-  };
+  return new Array(pages).fill("").map((_, index) => ({
+    label: String(index + 1),
+    offset: index * itemsPerPage,
+  }));
 }
 
 export default function Pagination({
@@ -33,7 +31,13 @@ export default function Pagination({
   itemsPerPage = 50,
   onPageClick,
 }: PaginationProps) {
-  const { numbers } = getPageNumbers(totalCount, itemsPerPage);
+  const [numbers, setNumbers] = useState<PageButton[]>([]);
+
+  useEffect(() => {
+    if (totalCount) {
+      setNumbers(getPageNumbers(totalCount, itemsPerPage));
+    }
+  }, [totalCount, itemsPerPage]);
 
   return (
     <div className="app__pagination">
@@ -42,6 +46,7 @@ export default function Pagination({
           key={"offset" + item.offset}
           className={item.offset === offset ? "active" : ""}
           onClick={() => onPageClick(item.offset)}
+          data-testid="btn-page-number"
         >
           {item.label}
         </button>

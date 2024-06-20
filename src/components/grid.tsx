@@ -28,6 +28,11 @@ function mapResponseData(data: any) {
   });
 }
 
+function getTotalCount(data: any) {
+  const total = data.numFound ? data.numFound : data.work_count;
+  return total;
+}
+
 export default function Grid() {
   const [currentOffset, setCurrentOffset] = useState(0);
   const { type, value } = useParams();
@@ -59,7 +64,7 @@ export default function Grid() {
   return (
     <div className="app__results-grid">
       <Pagination
-        totalCount={500}
+        totalCount={data && getTotalCount(data)}
         onPageClick={pageChangeHandler}
         offset={currentOffset}
       />

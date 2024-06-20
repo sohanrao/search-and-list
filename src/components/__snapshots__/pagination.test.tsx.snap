@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Pagination component > should render correctly 1`] = `
+<div>
+  <div
+    class="app__pagination"
+  >
+    <button
+      class="active"
+      data-testid="btn-page-number"
+    >
+      1
+    </button>
+    <button
+      class=""
+      data-testid="btn-page-number"
+    >
+      2
+    </button>
+    <button
+      class=""
+      data-testid="btn-page-number"
+    >
+      3
+    </button>
+    <button
+      class=""
+      data-testid="btn-page-number"
+    >
+      4
+    </button>
+  </div>
+</div>
+`;
